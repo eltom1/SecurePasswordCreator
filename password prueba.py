@@ -26,7 +26,7 @@ NUMEROS = ["0","1","2","3","4","5","6","7","8","9"]
 CARACTERES_ESPECIALES =["@","!","$","%","&","#","^","+","-","/","|","\\",">","<"]
 BINARIO = ["1","0"]
 
-TODO = ABECEDARIO_MAYUSCULAS+ ABECEDARIO_MINUSCULAS + NUMEROS + CARACTERES_ESPECIALES
+TODO = ABECEDARIO_MAYUSCULAS+ ABECEDARIO_MINUSCULAS + NUMEROS + CARACTERES_ESPECIALES + BINARIO
 
 def password_create(nro):
 	caracteres_elegidos = random.choices(TODO, k=nro)
