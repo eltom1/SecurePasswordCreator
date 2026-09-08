@@ -24,8 +24,7 @@ develop:
 python develop [x] 
 go(CLI) [x] 
 
-add password book []
-deploy []
-improve design CLI []
-Improve repository documentation []
+add password book []\n
+improve design CLI []\n
+Improve repository documentation []\n
 Documentation code [] 
