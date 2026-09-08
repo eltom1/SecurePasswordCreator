@@ -18,9 +18,14 @@ official web site: https://go.dev/
 
 check on CMD:   go version
 
-
+=============================================================================
 develop:
 
 python develop [x] 
+go(CLI) [x] 
 
-go(CLI) [] 
+add password book []
+deploy []
+improve design CLI []
+Improve repository documentation []
+Documentation code [] 
