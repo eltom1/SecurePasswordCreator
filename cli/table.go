@@ -69,11 +69,11 @@ func NewModel() tea.Model {
 	t := table.New(
 		table.WithColumns(columns),
 		table.WithRows([]table.Row{
-			{"Longiud", "X"},
-			{"Mayuscula", "X"},
+			{"Longitud", "X"},
+			{"Mayusculas", "X"},
 			{"Minusculas", "X"},
 			{"Numeros", "X"},
-			{"Caracter Especial", "X"},
+			{"Caracteres Especiales", "X"},
 		}),
 		table.WithFocused(false),
 		table.WithHeight(5),
@@ -160,9 +160,9 @@ func (m *model) updateTable() {
 	rows := []table.Row{
 		{"Longitud", fmt.Sprintf("%s (%d)", formatStatus(m.result.LengthOk), len(m.password))},
 		{"Mayusculas", fmt.Sprintf("%s (%d)", formatStatus(m.result.UpperOk), m.result.UpperCount)},
-		{"Minuscuas", fmt.Sprintf("%s (%d)", formatStatus(m.result.LowerOk), m.result.LowerCount)},
+		{"Minusculas", fmt.Sprintf("%s (%d)", formatStatus(m.result.LowerOk), m.result.LowerCount)},
 		{"Numeros", fmt.Sprintf("%s (%d)", formatStatus(m.result.NumOk), m.result.NumCount)},
-		{"Caracter Especial", fmt.Sprintf("%s (%d)", formatStatus(m.result.SpecOk), m.result.SpecCount)},
+		{"Caracteres Especiales", fmt.Sprintf("%s (%d)", formatStatus(m.result.SpecOk), m.result.SpecCount)},
 	}
 	m.table.SetRows(rows)
 }
@@ -177,7 +177,7 @@ func formatStatus(ok bool) string {
 //genera la interfaz visual de la applicacion
 func (m model) View() string {
 	var s string
-	s += titleStyle.Render("\t\t\t\t\t\tSECURE PASSWORD CREATOR") + "\n\n"
+	s += titleStyle.Render("SECURE PASSWORD CREATOR") + "\n\n"
 
 	// Length
 	prefix := "  "
