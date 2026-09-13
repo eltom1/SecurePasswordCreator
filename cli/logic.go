@@ -7,6 +7,7 @@ import (
 	"unicode"
 )
 
+//conjunto de caracteres 
 const (
 	Upper   = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	Lower   = "abcdefghijklmnopqrstuvwxyz"
@@ -14,6 +15,8 @@ const (
 	Special = "@!$%&#^+-/|\\><"
 )
 
+
+//los tipos que se utilizan
 type Options struct {
 	UseUpper   bool
 	UseLower   bool
@@ -21,6 +24,8 @@ type Options struct {
 	UseSpecial bool
 }
 
+
+//contiene los resultados y las estadisticas de validacion 
 type ValidationResult struct {
 	LengthOk   bool
 	UpperOk    bool
@@ -34,6 +39,8 @@ type ValidationResult struct {
 	SpecCount  int
 }
 
+
+//
 func Generate(length int, opts Options) (string, error) {
 	var charSet string
 	if opts.UseUpper { charSet += Upper }

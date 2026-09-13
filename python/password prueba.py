@@ -1,7 +1,7 @@
 import random 
 
 """
-program 
+programa
 
 checkear cantidad de caracteres [x]
 checkear que tenga caracteres especiales[x]
@@ -20,24 +20,27 @@ ejecucion del programa{
 	si no cumple los requisitos volver a ingresar contrasena sino pasa y la imprime 
 }
 """
+
 ABECEDARIO_MAYUSCULAS = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 ABECEDARIO_MINUSCULAS =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 NUMEROS = ["0","1","2","3","4","5","6","7","8","9"]
 CARACTERES_ESPECIALES =["@","!","$","%","&","#","^","+","-","/","|","\\",">","<"]
-BINARIO = ["1","0"]
 
-TODO = ABECEDARIO_MAYUSCULAS+ ABECEDARIO_MINUSCULAS + NUMEROS + CARACTERES_ESPECIALES + BINARIO
+
+TODO = ABECEDARIO_MAYUSCULAS+ ABECEDARIO_MINUSCULAS + NUMEROS + CARACTERES_ESPECIALES 
 
 def password_create(nro):
 	caracteres_elegidos = random.choices(TODO, k=nro)
 	pws = "".join(caracteres_elegidos)
 	contra = pws
 	return contra
-#check the passwords exceeds requiered 
+
+#revisa que las contrenas cumplan los requerimientos
 def check_pass(psw):
+
+	#acumuladores y contadores
 	acum = 0
 
-	#contadores
 	numero = 0
 	caracter_especial= 0
 	mayuscula = 0
@@ -94,6 +97,7 @@ def main():
 	password = password_create(tam)	
 	print(f"\n{password}\n")
 	check_pass(password)
+
 
 if __name__ == '__main__':
 	main()

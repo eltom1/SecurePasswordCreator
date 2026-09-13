@@ -1,19 +1,22 @@
 package main
 
+//Librerias necesarias
 import (
-	"fmt"
-	"strconv"
-	"time"
+	"fmt"  //para trabajar con msj en consola
+	"strconv"  //convierte strings a enteros
+	"time" // manejo de tiempo
 
-	"github.com/atotto/clipboard"
-	"github.com/charmbracelet/bubbles/table"
-	"github.com/charmbracelet/bubbles/textinput"
-	tea "github.com/charmbracelet/bubbletea"
-	"github.com/charmbracelet/lipgloss"
+	"github.com/atotto/clipboard"  // permite que se puede pegar en el portapapeles
+	"github.com/charmbracelet/bubbles/table" // msj en la terminal
+	"github.com/charmbracelet/bubbles/textinput" // entrada de texto
+	tea "github.com/charmbracelet/bubbletea" // para crear la interfaz Cli 
+	"github.com/charmbracelet/lipgloss" // + efectos a Cli 
 )
+
 
 type resetCopiedMsg struct{}
 
+//
 var (
     baseStyle = lipgloss.NewStyle().
         BorderStyle(lipgloss.NormalBorder()).
@@ -38,6 +41,7 @@ var (
         Background(lipgloss.Color("#2e3440"))
 )
 
+
 type model struct {
 	table       table.Model
 	lengthInput textinput.Model
@@ -49,6 +53,7 @@ type model struct {
 	copied      bool
 }
 
+//Crea y configura el estado inicial
 func NewModel() tea.Model {
 	ti := textinput.New()
 	ti.Placeholder = "8"
@@ -87,10 +92,14 @@ func NewModel() tea.Model {
 	}
 }
 
+
+//inicializa bubbleTea y activa el input del mouse 
 func (m model) Init() tea.Cmd {
 	return textinput.Blink
 }
 
+
+//Se encarga de procesar las teclas y actualizar el estado 
 func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	var cmd tea.Cmd
 
@@ -145,6 +154,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	return m, cmd
 }
 
+
+//actualiza la tabla a la hora de crear la contrasena
 func (m *model) updateTable() {
 	rows := []table.Row{
 		{"Length", fmt.Sprintf("%s (%d)", formatStatus(m.result.LengthOk), len(m.password))},
@@ -156,11 +167,14 @@ func (m *model) updateTable() {
 	m.table.SetRows(rows)
 }
 
+
+//convierte el resultado de val en estado visible
 func formatStatus(ok bool) string {
 	if ok { return "OK" }
 	return "NO"
 }
 
+//genera la interfaz visual de la applicacion
 func (m model) View() string {
 	var s string
 	s += titleStyle.Render("SECURE PASSWORD CREATOR") + "\n\n"
