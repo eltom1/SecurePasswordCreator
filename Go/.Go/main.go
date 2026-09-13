@@ -12,7 +12,7 @@ import (
 //Func main() se crea un nuevo programa BubbleTea usando NewModel()
 // si el programa tiene un error lo guarda en err y sino ejecuta 
 func main() {
-	p := tea.NewProgram(NewModel())
+	p := tea.NewProgram(NuevoModelo())
 	if _, err := p.Run(); err != nil {
 		fmt.Printf("Error de Programa: %v\n", err)
 		os.Exit(1)
