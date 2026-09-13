@@ -1,32 +1,46 @@
-# SecurePasswordCreator
+<p align="center">
+  <img src="https://github.com/eltom1/SecurePasswordCreator/blob/main/Imagenes/LOGO.png" alt="Logo del proyecto" width="300">
+</p>
 
 ![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
 
-The repository is a tool for creating secure passwords with different configurations
+##  GENERADOR DE CONTRASEÑAS SEGURAS 
 
-##Requirements:
-    -Python
-    -Go
 
------------------------Python Install-----------------------
+Generador de contraseñas por terminal que permite al usuario configurar y generar contraseñas aleatorias segun lo que elija:
+  
+    Longitud de la contraseña ...
+    Mayúsculas  [ ]
+    Minúsculas  [ ]
+    Números  [ ]
+    Caracteres especiales  [ ]
 
-official web site:  https://www.python.org/downloads/
+Controles 
 
-check on CMD:    python --version
+    ↑ / ↓     Moverse entre las opc
+    Espacio   Marcar o Desmarcar
+    Enter     Generar contraseña
+    c         Copiar contraseña
+    Esc       Salir
 
------------------------Goland Install-----------------------  
+## MUESTRA
+<img width="903" height="613" alt="Captura desde 2026-09-13 18-04-03" src="https://github.com/user-attachments/assets/31e30910-6e46-46e5-bd78-a90c8c29c347" />
 
-official web site: https://go.dev/
+## INSTALACION 
 
-check on CMD:   go version
 
-=============================================================================
-develop:
 
-python develop [x] 
-go(CLI) [x] 
-
-add password book []\n
-improve design CLI []\n
-Improve repository documentation []\n
-Documentation code [] 
