@@ -62,18 +62,18 @@ func NewModel() tea.Model {
 	ti.Width = 5
 
 	columns := []table.Column{
-		{Title: "Requirement", Width: 20},
-		{Title: "Status", Width: 10},
+		{Title: "Requisito", Width: 20},
+		{Title: "Estado", Width: 10},
 	}
 
 	t := table.New(
 		table.WithColumns(columns),
 		table.WithRows([]table.Row{
-			{"Length", "X"},
-			{"Uppercase", "X"},
-			{"Lowercase", "X"},
-			{"Numbers", "X"},
-			{"Special", "X"},
+			{"Longiud", "X"},
+			{"Mayuscula", "X"},
+			{"Minusculas", "X"},
+			{"Numeros", "X"},
+			{"Caracter Especial", "X"},
 		}),
 		table.WithFocused(false),
 		table.WithHeight(5),
@@ -130,7 +130,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		case "enter":
 			l, err := strconv.Atoi(m.lengthInput.Value())
 			if err != nil || l <= 0 {
-				m.err = fmt.Errorf("invalid length")
+				m.err = fmt.Errorf("Longitud No Valida")
 				return m, nil
 			}
 			m.err = nil
@@ -158,11 +158,11 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 //actualiza la tabla a la hora de crear la contrasena
 func (m *model) updateTable() {
 	rows := []table.Row{
-		{"Length", fmt.Sprintf("%s (%d)", formatStatus(m.result.LengthOk), len(m.password))},
-		{"Uppercase", fmt.Sprintf("%s (%d)", formatStatus(m.result.UpperOk), m.result.UpperCount)},
-		{"Lowercase", fmt.Sprintf("%s (%d)", formatStatus(m.result.LowerOk), m.result.LowerCount)},
-		{"Numbers", fmt.Sprintf("%s (%d)", formatStatus(m.result.NumOk), m.result.NumCount)},
-		{"Special", fmt.Sprintf("%s (%d)", formatStatus(m.result.SpecOk), m.result.SpecCount)},
+		{"Longitud", fmt.Sprintf("%s (%d)", formatStatus(m.result.LengthOk), len(m.password))},
+		{"Mayusculas", fmt.Sprintf("%s (%d)", formatStatus(m.result.UpperOk), m.result.UpperCount)},
+		{"Minuscuas", fmt.Sprintf("%s (%d)", formatStatus(m.result.LowerOk), m.result.LowerCount)},
+		{"Numeros", fmt.Sprintf("%s (%d)", formatStatus(m.result.NumOk), m.result.NumCount)},
+		{"Caracter Especial", fmt.Sprintf("%s (%d)", formatStatus(m.result.SpecOk), m.result.SpecCount)},
 	}
 	m.table.SetRows(rows)
 }
@@ -177,24 +177,24 @@ func formatStatus(ok bool) string {
 //genera la interfaz visual de la applicacion
 func (m model) View() string {
 	var s string
-	s += titleStyle.Render("SECURE PASSWORD CREATOR") + "\n\n"
+	s += titleStyle.Render("\t\t\t\t\t\tSECURE PASSWORD CREATOR") + "\n\n"
 
 	// Length
 	prefix := "  "
 	if m.cursor == 0 { prefix = "> " }
-	s += fmt.Sprintf("%sLength: %s\n\n", prefix, m.lengthInput.View())
+	s += fmt.Sprintf("%sLongitud: %s\n\n", prefix, m.lengthInput.View())
 
 	// Options
-	s += "Options (Space to toggle):\n"
+	s += "Opciones (Espacio para cambiar):\n"
 	options := []struct {
 		label string
 		val   bool
 		idx   int
 	}{
-		{"Uppercase", m.options.UseUpper, 1},
-		{"Lowercase", m.options.UseLower, 2},
-		{"Numbers", m.options.UseNumbers, 3},
-		{"Special", m.options.UseSpecial, 4},
+		{"Mayusculas", m.options.UseUpper, 1},
+		{"Minusculas", m.options.UseLower, 2},
+		{"Numeros", m.options.UseNumbers, 3},
+		{"Caracteres Especiales", m.options.UseSpecial, 4},
 	}
 	
 	for _, opt := range options {
@@ -212,14 +212,14 @@ func (m model) View() string {
 	if m.password != "" {
 							copyMsg := ""
 			if m.copied {
-				copyMsg = "  Copied to clipboard! ✅"
+				copyMsg = "  Copiado al Portapapeles"
 			}
-			s += fmt.Sprintf("\nPassword: %s%s\n\n", passwordStyle.Render(m.password), accentStyle.Render(copyMsg))
-		s += "Validation:\n"
+			s += fmt.Sprintf("Contraseña: %s%s\n\n", passwordStyle.Render(m.password), accentStyle.Render(copyMsg))
+		s += "Validacion:\n"
 		s += baseStyle.Render(m.table.View()) + "\n"
 	}
 
-	s += "\nControls: Up/Down: Move | Space: Toggle | Enter: Generate | 'c': Copy | Esc: Quit"
+	s += "\nControles: Arriba/Abajo: Mover | Espacio: Alternar | Enter: Generar | 'c': Copiar | Esc: Salir"
 
 	return lipgloss.NewStyle().
 			Padding(1, 2).

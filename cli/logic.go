@@ -49,7 +49,7 @@ func Generate(length int, opts Options) (string, error) {
 	if opts.UseSpecial { charSet += Special }
 
 	if charSet == "" {
-		return "", fmt.Errorf("select at least one charset")
+		return "", fmt.Errorf("Selecciona un conjunto")
 	}
 
 	result := make([]byte, length)

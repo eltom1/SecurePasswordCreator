@@ -14,7 +14,7 @@ import (
 func main() {
 	p := tea.NewProgram(NewModel())
 	if _, err := p.Run(); err != nil {
-		fmt.Printf("Error running program: %v\n", err)
+		fmt.Printf("Error de Programa: %v\n", err)
 		os.Exit(1)
 	}
 }
