@@ -1,5 +1,7 @@
 # SecurePasswordCreator
 
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+
 The repository is a tool for creating secure passwords with different configurations
 
 ##Requirements:
