@@ -2,8 +2,9 @@
   <img src="https://github.com/eltom1/SecurePasswordCreator/blob/main/Imagenes/LOGO.png" alt="Logo del proyecto" width="300">
 </p>
 
-![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
-
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
 ##  GENERADOR DE CONTRASEÑAS SEGURAS 
 
@@ -25,16 +26,15 @@ Controles
     Esc       Salir
 
 ## MUESTRA
-<img width="903" height="613" alt="Captura desde 2026-09-13 18-04-03" src="https://github.com/user-attachments/assets/31e30910-6e46-46e5-bd78-a90c8c29c347" />
+
+<img width="903" height="613" alt="C2" src="https://github.com/user-attachments/assets/35e92e56-ddc1-4a6f-bc0c-7edcbd37ff2c" />
 
 ## FUTURAS ACTUALIZACIONES
 
-Explicar instalacion en el README[]
-Medidor de seguridad []
-Historial de contraseñas []
-Exportar contraseñas []
-Compilaciones win/etc []
-Mejorar el dis []
-
-
+- [ ] Explicar instalación en el README
+- [ ] Medidor de seguridad
+- [ ] Historial de contraseñas
+- [ ] Exportar contraseñas
+- [ ] Compilaciones para Windows/Linux/etc.
+- [ ] Mejorar el diseño
 
