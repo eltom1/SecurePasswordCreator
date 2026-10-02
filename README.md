@@ -27,7 +27,8 @@ Controles
 
 ## MUESTRA
 
-<img width="903" height="613" alt="C2" src="https://github.com/user-attachments/assets/35e92e56-ddc1-4a6f-bc0c-7edcbd37ff2c" />
+<img width="696" height="480" alt="202610021206" src="https://github.com/user-attachments/assets/946e020d-a403-4426-a1d9-6c3f81fe5df2" />
+
 
 ## FUTURAS ACTUALIZACIONES
 
